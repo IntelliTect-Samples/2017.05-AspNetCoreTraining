@@ -30,7 +30,21 @@ namespace SampleWebApplication
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                if (context.Request.Path == "/test")
+                {
+                    var message = $"This is a test of the emergency broadcast system.";
+                    if (context.Request.Query.TryGetValue("name",
+                        out Microsoft.Extensions.Primitives.StringValues stringValues))
+                    {
+                        message = $"{stringValues.FirstOrDefault()}: {message}";
+                    }
+                    await context.Response.WriteAsync(message);
+                }
+                else
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                }
+                
             });
         }
     }
