@@ -16,5 +16,10 @@ namespace SampleWebApplication.Controllers
             ViewBag.Name = name??"Inigo Montoya";
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }

@@ -5,7 +5,12 @@
 
 }
 
+@* Replaces: 
+    <li>@Html.ActionLink("Register Online", "Index", "Home")</li>
+    @Html.ActionLink("My Home Page", "Index", "Team", null, new { @class = "btn btn-default" })
+*@
 
+<a asp-controller="Home" asp-action ="About">About</a>
 
 <p class="jumbotron">
     Hello, my name is @(ViewBag.Name ?? "(unknown)").
