@@ -12,7 +12,12 @@
 
 <a asp-controller="Home" asp-action ="About">About</a>
 
+
+
 <p class="jumbotron">
     Hello, my name is @(ViewBag.Name ?? "(unknown)").
 </p>
 
+@section scripts{
+    <script src="~/main.min.js"></script>
+}
