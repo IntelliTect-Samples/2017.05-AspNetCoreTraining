@@ -28,10 +28,13 @@ namespace SampleWebApplication
                 app.UseDeveloperExceptionPage();
             }
 
+           // T Method<T>(Task parameter) { return parameter; }
+
             app.Run(async (context) =>
             {
                 if (context.Request.Path == "/test")
                 {
+                    // Don't use var unless the data type is very explicit!!
                     var message = $"This is a test of the emergency broadcast system.";
                     if (context.Request.Query.TryGetValue("name",
                         out Microsoft.Extensions.Primitives.StringValues stringValues))
